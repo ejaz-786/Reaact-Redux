@@ -5,12 +5,10 @@ import { accountReducer } from "./account";
 import { bonusReducer } from "./bonus";
 import thunk from "redux-thunk";
 
-// const rootReducer = { account: accountReducer, bonus: bonusReducer };
+const rootReducer = { account: accountReducer, bonus: bonusReducer };
 
 // store
 export const store = createStore(
-  combineReducers(
-    { account: accountReducer, bonus: bonusReducer },
-    applyMiddleware(logger, thunk)
-  )
+  combineReducers(rootReducer),
+  applyMiddleware(logger, thunk)
 );
